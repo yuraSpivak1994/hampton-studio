@@ -1,0 +1,330 @@
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+  z-index: 30;
+
+  .logo-box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    right: 0;
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-play-state: initial;
+    animation-name: item;
+
+    @-webkit-keyframes item {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .image-logo {
+      position: absolute;
+      right: 310px;
+      top: 13px;
+      width: 162px;
+      height: 166px;
+      background-size: cover;
+      animation-duration: 3.2s;
+      animation-timing-function: cubic-bezier(.88, .09, .77, 1.11);
+      animation-name: logo;
+      z-index: 8;
+
+      @-webkit-keyframes logo {
+        0% {
+          right: 40%;
+          top: 200px;
+          width: 550px;
+          height: 550px;
+        }
+        65% {
+          right: 40%;
+          width: 550px;
+          height: 550px;
+          top: 200px;
+        }
+
+        100% {
+          right: 310px;
+          top: 13px;
+          width: 162px;
+          height: 166px;
+        }
+      }
+      .red-block {
+        width: 295px;
+        height: 14px;
+        background-color: #bf1e2e;
+        left: 176px;
+        position: absolute;
+        overflow: hidden;
+        animation-duration: 6s;
+        animation-timing-function: cubic-bezier(.04, .72, .82, .84);
+        animation-iteration-count: 1;
+        animation-play-state: initial;
+        animation-name: push-red;
+        cursor: pointer;
+        z-index: 1999;
+
+        @-webkit-keyframes push-red {
+          0% {
+            width: 0;
+            height: 14px;
+          }
+          62% {
+            width: 0;
+            height: 14px;
+          }
+          100% {
+            width: 295px;
+          }
+        }
+        .policy-img {
+          position: absolute;
+          left: 2px;
+          letter-spacing: 4px;
+          font-weight: bold;
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+
+          p {
+            font-family: sans-serif;
+            font-size: 13px;
+            letter-spacing: 2.6px;
+            color: #ffffff;
+            display: inline-block;
+            margin-left: 10px;
+            width: 200px;
+          }
+        }
+      }
+    }
+    ul {
+      display: none;
+    }
+    .pinkRowStart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+      background-color: #dca5c5;
+      right: 487px;
+      position: absolute;
+      top: 43px;
+      animation-duration: 7.5s;
+      animation-timing-function: cubic-bezier(.04, .72, .82, .84);
+      animation-iteration-count: 1;
+      animation-play-state: initial;
+      animation-name: push-pink;
+      overflow: hidden;
+      &.pinkRowStartColumn {
+
+      }
+      @-webkit-keyframes push-pink {
+        0% {
+          width: 0;
+        }
+        50% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+      .nav-desktop {
+        display: none;
+      }
+      .nav-desktop {
+        max-width: 980px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: block;
+        right: 0;
+        ul {
+          margin-top: 37px;
+          display: flex;
+          list-style: none;
+          justify-content: center;
+          align-items: center;
+          animation-duration: 2.9s;
+          animation-timing-function: ease;
+          animation-iteration-count: 1;
+          animation-play-state: initial;
+          animation-name: item;
+
+          @-webkit-keyframes item {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+
+          li {
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 1.71;
+            letter-spacing: 2.8px;
+            color: #ffffff;
+            margin-right: 56px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            span {
+              a {
+                text-decoration: none;
+                color: #ffffff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .green-block {
+      width: 99px;
+      height: 100vw;
+      right: 337px;
+      position: absolute;
+      top: 191px;
+      background-color: #cec19f;
+      animation-duration: 6s;
+      animation-timing-function: cubic-bezier(.04, .72, .82, .84);
+      animation-iteration-count: 1;
+      animation-play-state: initial;
+      animation-name: push-green;
+      z-index: 4;
+      overflow: hidden;
+
+      @-webkit-keyframes push-green {
+        0% {
+          height: 0;
+        }
+        62% {
+          height: 0;
+        }
+        100% {
+          height: 100vh;
+        }
+      }
+      .social-icons {
+        display: flex;
+        width: 100%;
+        height: 349px;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .logo-icons {
+          width: 18px;
+          height: 18px;
+          background-size: cover;
+        }
+        .pinterest-icon {
+          background-image: url("./../assets/header/pinterest-social-logo.png");
+        }
+        .close-icon {
+          background-image: url("./../assets/header/closed-envelope-circle.png");
+        }
+        .vimeo-icon {
+          background-image: url("./../assets/header/vimeo-social-logo.png");
+        }
+        .tweeter-icon {
+          background-image: url("./../assets/header/twitter-logo.png");
+        }
+        .facebook-icon {
+          background-image: url("./../assets/header/facebook-logo.png");
+        }
+        .inst-icon {
+          background-image: url("./../assets/header/instagram-logo.png");
+        }
+        .in-icon {
+          background-image: url("./../assets/header/linkedin.png");
+        }
+      }
+    }
+  }
+}
+::ng-deep {
+  .ui-sidebar-bottom {
+    width: 200px;
+    top: 180px;
+    background: red;
+    .sidebar {
+      background: red;
+      width: 100px;
+      height: 200px;
+      z-index: 22000;
+    }
+  }
+}
+::ng-deep {
+  .ng-tns-c1-2 {
+    height: auto;
+  }
+  .ui-sidebar-top {
+    width: 296px;
+    top: 0;
+    right: 0;
+    left: initial;
+    position: absolute;
+    box-shadow: none;
+    .ng-tns-c0-0 {
+      top: 40px;
+      position: absolute;
+      height: 500px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 1.2;
+      text-align: left;
+      color: #958c99;
+      left: 0;
+      &::-webkit-scrollbar-track {
+        background-color: #ebebeb;
+      }
+      &::-webkit-scrollbar {
+        width: 5px;
+        background-color: #ebebeb;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #bf1e2e;
+      }
+    }
+    .policy {
+      width: 296px;
+      box-sizing: border-box;
+      left: 0;
+      position: absolute;
+      top: 50px;
+      .desc-box {
+        width: 100%;
+        height: 500px;
+
+
+      }
+    }
+  }
+  .policy {
+     width: 296px;
+     height: 200px;
+     background: red;
+   }
+  .policy2 {
+    width: 296px;
+    height: 1px;
+    background: red;
+  }
+}

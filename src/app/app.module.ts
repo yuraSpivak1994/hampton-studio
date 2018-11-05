@@ -11,6 +11,7 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRouting} from './app-routing';
 import {SidebarModule} from 'primeng/sidebar';
+import { RouterHelpService } from './other/router-help.service';
 
 
 
@@ -29,7 +30,7 @@ import {SidebarModule} from 'primeng/sidebar';
     BrowserAnimationsModule,
     SidebarModule
   ],
-  providers: [SidebarModule],
+  providers: [RouterHelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

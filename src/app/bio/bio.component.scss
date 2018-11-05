@@ -1,8 +1,18 @@
 .container {
-  position: absolute;
-  top: 142px;
-  right: 487px;
+  padding: 142px 487px 0 0;
+  // Required that the duration of animation must be the same as NAVIGATION_DELAY (see in constant).
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-play-state: initial;
+  overflow: hidden;
 
+  &.fade-in {
+    animation-name: bioAnimationIn;
+  }
+  &.fade-out {
+    animation-name: bioAnimationOut;
+  }
 
   .pink-row {
     width: 100%;
@@ -41,5 +51,15 @@
       color: rgba(51, 51, 51, 0.8);
       padding: 10px 30px;
     }
+  }
+
+  @keyframes bioAnimationIn {
+    from {max-height: 0px;}
+    to {max-height: 1000px;}
+  }
+
+  @keyframes bioAnimationOut {
+    from {max-height: 1000px}
+    to {max-height:  0px;}
   }
 }

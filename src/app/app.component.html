@@ -1,8 +1,8 @@
-<div class="container" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+<div class="container">
   <div class="logo-box">
     <div class="image-logo">
       <div class="red-block">
-        <div class="policy-img" (click)="policy = true"><p>privacy policy</p></div>
+        <div class="policy-img" (click)="showPolicy()"><p>privacy policy</p></div>
       </div>
       <img src="/src/assets/header/logo.png" alt="logo">
     </div>
@@ -23,15 +23,15 @@
           <li><span>
             <a
               routerLinkActive="active"
-              routerLink="/bio">bio</a></span>
+              (click)="navigate('/bio')">bio</a></span>
           </li>
           <li><span><a
             routerLinkActive="active"
-            routerLink="/text">text</a></span></li>
+            (click)="navigate('/text')">text</a></span></li>
           <li><span>
             <a
               routerLinkActive="active"
-              (click)="display = true"
+              (click)="showSlider()"
             >work</a></span>
           </li>
           <li *ngIf="false"><span>
@@ -45,15 +45,15 @@
     </div>
   </div>
 
-  <router-outlet #o="outlet"></router-outlet>
+  <router-outlet *ngIf="isShowPages"></router-outlet>
 </div>
 
-<p-sidebar [(visible)]="display"  position="bottom" styleClass="ui-sidebar-bottom">
+<p-sidebar [(visible)]="isSliderShowing"  position="bottom" styleClass="ui-sidebar-bottom">
   Content
   <div class="sidebar"></div>
 </p-sidebar>
 
-<p-sidebar [(visible)]="policy"  position="top"  [baseZIndex]="10000" styleClass="ui-sidebar-top">
+<p-sidebar [(visible)]="isPolicyShowing"  position="top"  [baseZIndex]="10000" styleClass="ui-sidebar-top">
   <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam cumque et ex facere, facilis iure labore nostrum
     provident reiciendis reprehenderit repudiandae sit, tempora ullam vel, vero voluptate. Distinctio, veniam!</div>
 </p-sidebar>

@@ -10,7 +10,8 @@ const appRoutes: Routes = [
   {path: 'work', component: WorkComponent},
   {path: 'bio', component: BioComponent},
   {path: 'text', component: TextComponent},
-  {path: '', component: EmptyComponent},
+  {path: 'home', component: EmptyComponent},
+  {redirectTo: 'home', pathMatch: 'full', path: ''}
 
 ];
 

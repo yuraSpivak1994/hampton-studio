@@ -44,15 +44,23 @@
   }
 
   @keyframes textAnimationIn {
-    from {max-width: 0;}
-    to {max-width: 100%;}
+    0% {
+      max-width: 0;
+      transform: translateX(-101%);
+    }
+    100% {
+      max-width: 100%;
+      transform: translateX(0);
+      position: absolute;
+    }
   }
   @keyframes textAnimationOut {
     0% {max-width: 100%;}
     100% {
       max-width: 0;
-      transform: translateX(400%);
+      transform: translateX(500%);
       position: absolute;
     }
   }
 }
+

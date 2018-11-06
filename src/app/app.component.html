@@ -48,13 +48,52 @@
   <router-outlet *ngIf="isShowPages"></router-outlet>
 </div>
 
-<p-sidebar [(visible)]="isSliderShowing"  position="bottom" styleClass="ui-sidebar-bottom">
-  Content
-  <div class="sidebar"></div>
+<p-sidebar [(visible)]="isSliderShowing" position="bottom" styleClass="ui-sidebar-bottom popup-slider">
+  <div class="slider-container">
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div class="content-box" (click)="navigate('/portfolio')">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{slide.img}}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{ slide.img }}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{ slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{ slide.img }}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{ slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ngx-slick>
+  </div>
 </p-sidebar>
 
-<p-sidebar [(visible)]="isPolicyShowing"  position="top"  [baseZIndex]="10000" styleClass="ui-sidebar-top">
-  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam cumque et ex facere, facilis iure labore nostrum
-    provident reiciendis reprehenderit repudiandae sit, tempora ullam vel, vero voluptate. Distinctio, veniam!</div>
+<p-sidebar [(visible)]="isPolicyShowing" position="top" [baseZIndex]="10000" styleClass="ui-sidebar-top">
+  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam cumque et ex facere, facilis iure labore
+    nostrum
+    provident reiciendis reprehenderit repudiandae sit, tempora ullam vel, vero voluptate. Distinctio, veniam!
+  </div>
 </p-sidebar>
 

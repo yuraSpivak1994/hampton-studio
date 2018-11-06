@@ -1,0 +1,93 @@
+.container {
+  padding: 193px 487px 0 0;
+  // Required that the duration of animation must be the same as NAVIGATION_DELAY (see in constant).
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-play-state: initial;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  animation-name: portfolioAnimationOut;
+  &.fade-in {
+    animation-name: portfolioAnimationIn;
+  }
+  &.fade-out {
+    animation-name: portfolioAnimationOut;
+  }
+
+  .year-portfolio {
+    width: 114px;
+    border-right: 1px solid #958c99;
+
+    p {
+      font-family: sans-serif;
+      font-size: 14px;
+      letter-spacing: 7px;
+      text-align: center;
+      color: rgba(51, 51, 51, 0.8);
+    }
+  }
+  .content {
+    width: 100%;
+
+    .item-row {
+      width: 100%;
+      display: flex;
+
+      .image-block {
+        width: 546px;
+        padding: 50px 14px;
+      }
+      .items-box {
+        width: 100%;
+        padding: 50px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        .title-portfolio {
+          padding-bottom: 10px;
+          font-family: sans-serif;
+          font-size: 24px;
+          line-height: 1;
+          color: rgba(51, 51, 51, 0.8);
+        }
+        .desc-portfolio {
+          font-family: sans-serif;
+          font-size: 20px;
+          line-height: 1.2;
+          color: rgba(51, 51, 51, 0.8);
+        }
+
+        .read-more {
+          margin-right: auto;
+          cursor: pointer;
+          font-family: sans-serif;
+          color: #cec19f;
+        }
+      }
+    }
+  }
+
+  @keyframes portfolioAnimationIn {
+    0% {
+      max-width: 0;
+      transform: translateX(-101%);
+    }
+    100% {
+      max-width: 100%;
+      transform: translateX(0);
+      position: absolute;
+    }
+  }
+  @keyframes portfolioAnimationOut {
+    0% {max-width: 100%;}
+    100% {
+      max-width: 0;
+      transform: translateX(500%);
+      position: absolute;
+    }
+  }
+}

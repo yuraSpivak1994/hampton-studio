@@ -12,6 +12,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRouting} from './app-routing';
 import {SidebarModule} from 'primeng/sidebar';
 import { RouterHelpService } from './other/router-help.service';
+import { SlickModule } from 'ngx-slick';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 
@@ -22,13 +24,15 @@ import { RouterHelpService } from './other/router-help.service';
     WorkComponent,
     TextComponent,
     EmptyComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     AppRouting,
     BrowserAnimationsModule,
-    SidebarModule
+    SidebarModule,
+    SlickModule
   ],
   providers: [RouterHelpService],
   bootstrap: [AppComponent]

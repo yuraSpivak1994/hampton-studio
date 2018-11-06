@@ -1,0 +1,41 @@
+<div class="container" [ngClass]="{'fade-in': isFadeIn, 'fade-out': isFadeOut}">
+  <div class="year-portfolio">
+    <p>2014</p>
+  </div>
+  <div class="content">
+    <div class="item-row">
+      <div class="image-block">
+        <video width="100%"
+          src="https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4" controls></video>
+      </div>
+      <div class="items-box">
+        <h2 class="title-portfolio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate distinctio
+          doloremque eaque laboriosam
+          magnam, magni molestiae neque nihil non nostrum obcaecati omnis, pariatur praesentium quae quia quos
+          repudiandae rerum.</h2>
+        <div class="desc-portfolio" [@readMore]="openReadMore">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa cumque delectus
+          dignissimos dolorum eos
+          fugit ipsum maxime molestiae nisi, non praesentium quibusdam quod rem reprehenderit suscipit tempora
+          temporibus voluptates?</div>
+      <span class="read-more" (click)="openReadMore = openReadMore === 'showDescription' ? 'hideDescription' : 'showDescription' ">read more...</span>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="image-block">
+        <video width="100%"
+               src="https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4" controls></video>
+      </div>
+      <div class="items-box">
+        <h2 class="title-portfolio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate distinctio
+          doloremque eaque laboriosam
+          magnam, magni molestiae neque nihil non nostrum obcaecati omnis, pariatur praesentium quae quia quos
+          repudiandae rerum.</h2>
+        <div class="desc-portfolio" [@readMore]="openReadMore">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At culpa cumque delectus
+          dignissimos dolorum eos
+          fugit ipsum maxime molestiae nisi, non praesentium quibusdam quod rem reprehenderit suscipit tempora
+          temporibus voluptates?</div>
+        <span class="read-more" (click)="openReadMore = openReadMore === 'showDescription' ? 'hideDescription' : 'showDescription' ">read more...</span>
+      </div>
+    </div>
+  </div>
+</div>

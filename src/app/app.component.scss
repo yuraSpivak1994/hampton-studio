@@ -261,11 +261,12 @@
   .ui-sidebar-bottom {
     max-width: 1400px;
     height: 300px;
-    top: 193px;
     background: #958c99;
+    transform: translateY(170%);
   }
   .popup-slider {
     width: calc(100% - 487px);
+    top: 193px;
   }
 }
 ::ng-deep {

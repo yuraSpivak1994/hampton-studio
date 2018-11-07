@@ -47,7 +47,6 @@
 
   <router-outlet *ngIf="isShowPages"></router-outlet>
 </div>
-
 <p-sidebar [(visible)]="isSliderShowing" position="bottom" styleClass="ui-sidebar-bottom popup-slider">
   <div class="slider-container">
     <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">

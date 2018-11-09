@@ -1,8 +1,8 @@
 <div class="container">
   <div class="logo-box">
     <div class="image-logo">
-      <div class="red-block">
-        <div class="policy-img" (click)="showPolicy()"><p>privacy policy</p></div>
+      <div class="red-block" (click)="showPolicy()">
+        <div class="policy-img"></div>
       </div>
       <img src="/src/assets/header/logo.png" alt="logo">
     </div>
@@ -46,15 +46,54 @@
   </div>
 
   <router-outlet *ngIf="isShowPages"></router-outlet>
+  <div class="privacy-box" [ngClass]="{'open-policy': isPolicyShow, 'close-policy': isPolicyHide}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate debitis enim vitae. Ab asperiores
+    consectetur consequuntur illum, incidunt maxime ut? Aliquid ducimus eligendi est quos sequi sit tempore velit.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut dolore nesciunt quae sunt veniam
+    voluptatem? Accusamus adipisci aperiam, cupiditate eius iste modi nostrum officia omnis quis quod suscipit.
+  </div>
 </div>
-
-<p-sidebar [(visible)]="isSliderShowing"  position="bottom" styleClass="ui-sidebar-bottom">
-  Content
-  <div class="sidebar"></div>
+<p-sidebar [(visible)]="isSliderShowing" position="bottom" styleClass="ui-sidebar-bottom popup-slider">
+  <div class="slider-container">
+    <div class="empty-block"></div>
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div class="content-box" (click)="navigate('/portfolio')">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{slide.img}}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{ slide.img }}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{ slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{ slide.img }}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{ slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ngx-slick>
+  </div>
 </p-sidebar>
 
-<p-sidebar [(visible)]="isPolicyShowing"  position="top"  [baseZIndex]="10000" styleClass="ui-sidebar-top">
-  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam cumque et ex facere, facilis iure labore nostrum
-    provident reiciendis reprehenderit repudiandae sit, tempora ullam vel, vero voluptate. Distinctio, veniam!</div>
-</p-sidebar>
 

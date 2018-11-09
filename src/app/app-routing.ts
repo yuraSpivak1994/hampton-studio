@@ -4,6 +4,7 @@ import {EmptyComponent} from './empty/empty.component';
 import {TextComponent} from './text/text.component';
 import {BioComponent} from './bio/bio.component';
 import {WorkComponent} from './work/work.component';
+import {PortfolioComponent} from "./portfolio/portfolio.component";
 
 
 const appRoutes: Routes = [
@@ -11,6 +12,7 @@ const appRoutes: Routes = [
   {path: 'bio', component: BioComponent},
   {path: 'text', component: TextComponent},
   {path: 'home', component: EmptyComponent},
+  {path: 'portfolio', component: PortfolioComponent},
   {redirectTo: 'home', pathMatch: 'full', path: ''}
 
 ];

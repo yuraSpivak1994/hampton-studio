@@ -1,0 +1,21 @@
+<div class="container" [ngClass]="{'fade-in': isFadeIn, 'fade-out': isFadeOut}">
+  <div class="year-portfolio">
+    <p class="year">2014</p>
+  </div>
+  <div class="content">
+    <div class="item-row" *ngFor="let item of portfolio" id="{{item.id}}">
+      <div class="image-block">
+        <video width="100%"
+          src="https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4" controls></video>
+      </div>
+      <div class="row-box">
+      <div class="items-box" [ngClass]="{'description-close': hideDesc, 'description-open': showDesc}" >
+        <h2 class="title-portfolio">{{item.title}}</h2>
+        <!--<div class="desc-portfolio" ngClass="[@readMore]='openReadMore'" >{{item.description}}</div>-->
+        <div class="desc-portfolio">{{item.description}}</div>
+      </div>
+      <span class="read-more" (click)="changeClass()">read more...</span>
+      </div>
+    </div>
+  </div>
+</div>

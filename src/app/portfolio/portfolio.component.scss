@@ -1,7 +1,7 @@
 .container {
-  padding: 193px 487px 0 0;
+  padding: 223px 487px 0 0;
   // Required that the duration of animation must be the same as NAVIGATION_DELAY (see in constant).
-  animation-duration: 0.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in;
   animation-iteration-count: 1;
   animation-play-state: initial;
@@ -34,39 +34,59 @@
     .item-row {
       width: 100%;
       display: flex;
+      height: auto;
+
+      .description-close {
+        overflow: hidden;
+        max-height: 100px;
+        transition: 0.5s ease-in-out;
+      }
+      .description-open {
+        overflow: auto;
+        transition: 0.5s ease-in-out;
+        height: auto;
+      }
 
       .image-block {
         width: 546px;
-        padding: 50px 14px;
+        padding: 0 14px 36px 14px;
       }
-      .items-box {
+      .row-box {
         width: 100%;
-        padding: 50px 0;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
 
-        .title-portfolio {
-          padding-bottom: 10px;
-          font-family: sans-serif;
-          font-size: 24px;
-          line-height: 1;
-          color: rgba(51, 51, 51, 0.8);
-        }
-        .desc-portfolio {
-          font-family: sans-serif;
-          font-size: 20px;
-          line-height: 1.2;
-          color: rgba(51, 51, 51, 0.8);
-        }
+        .items-box {
+          width: 100%;
+          padding: 0;
 
-        .read-more {
-          margin-right: auto;
-          cursor: pointer;
-          font-family: sans-serif;
-          color: #cec19f;
+          .title-portfolio {
+            padding-bottom: 10px;
+            font-family: sans-serif;
+            font-size: 24px;
+            line-height: 1;
+            color: rgba(51, 51, 51, 0.8);
+
+            @media screen and(max-width: 1400px){
+              font-size: 20px;
+            }
+          }
+          .desc-portfolio {
+            font-family: sans-serif;
+            font-size: 20px;
+            line-height: 1.2;
+            color: rgba(51, 51, 51, 0.8);
+            width: 100%;
+
+            @media screen and(max-width: 1400px){
+              font-size: 14px;
+            }
+          }
         }
+          .read-more {
+            margin-right: auto;
+            cursor: pointer;
+            font-family: sans-serif;
+            color: #cec19f;
+          }
       }
     }
   }
@@ -83,11 +103,19 @@
     }
   }
   @keyframes portfolioAnimationOut {
-    0% {max-width: 100%;}
+    0% {
+      max-width: 100%;
+    }
     100% {
       max-width: 0;
       transform: translateX(500%);
       position: absolute;
+    }
+  }
+  @media screen and(max-width: 1400px) {
+    padding: 200px 407px 0 0;
+    @media screen and(max-width: 800px) {
+      padding: 153px 251px 0 0;
     }
   }
 }

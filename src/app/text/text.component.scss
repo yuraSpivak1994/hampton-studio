@@ -1,7 +1,7 @@
 .container {
-  padding: 193px 487px 0 0;
+  padding: 223px 487px 0 0;
   // Required that the duration of animation must be the same as NAVIGATION_DELAY (see in constant).
-  animation-duration: 0.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in;
   animation-iteration-count: 1;
   animation-play-state: initial;
@@ -60,6 +60,12 @@
       max-width: 0;
       transform: translateX(500%);
       position: absolute;
+    }
+  }
+  @media screen and(max-width: 1400px) {
+    padding: 200px 407px 0 0;
+    @media screen and(max-width: 800px) {
+      padding: 153px 251px 0 0;
     }
   }
 }

@@ -14,7 +14,9 @@ import {RouterHelpService} from './other/router-help.service';
 
 export class AppComponent extends RouterDelay implements OnInit {
   public isSliderShowing = false;
-  public isPolicyShowing = false;
+  public isPolicyShow = false;
+  public isPolicyHide = true;
+
   public isShowPages = false;
 
   constructor(protected router: Router, protected helper: RouterHelpService) {
@@ -30,12 +32,15 @@ export class AppComponent extends RouterDelay implements OnInit {
   }
 
   public showPolicy(): void {
-    this.isPolicyShowing = true;
+    if(this.isPolicyShow === false && this.isPolicyHide === true){
+      this.isPolicyShow = true;
+      this.isPolicyHide = false;
+    }else {
+      this.isPolicyShow = false;
+      this.isPolicyHide = true;
+    }
   }
 
-  public hidePolicy(): void {
-    this.isPolicyShowing = true;
-  }
 
   slides = [
     {

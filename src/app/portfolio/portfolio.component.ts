@@ -29,30 +29,24 @@ export class PortfolioComponent  extends FadeAnimation {
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur cum cupiditate deserunt, exercitationem explicabo hic incidunt,' +
         ' inventore neque nulla pariatur provident ' +
         'quasi quos ratione reprehenderit sequi tempore, velit. ',
-      id: 2
+      isShow: false
     },
     {
       title: 'lorem gj gjyg ygjyegjyqgew ew q gewqg jwhgd wg qwygdjygwd  ywgyqwg ywqge ',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur cum cupiditate deserunt, exercitationem explicabo hic incidunt,' +
         ' inventore neque nulla pariatur provident ' +
         'quasi quos ratione reprehenderit sequi tempore, velit. ',
-      id:3
+      isShow: false
     }];
-  openReadMore = 'showDescription';
-  public showDesc: boolean = false;
-  public hideDesc: boolean = true;
-  // addClass() {
-  //   this.openReadMore = this.openReadMore === 'showDescription' ? 'hideDescription' : 'showDescription'
-  // }
-  changeClass() {
-    if(this.showDesc === false && this.hideDesc === true){
-      this.showDesc = true;
-      this.hideDesc = false
-    }else {
-      this.showDesc = false;
-      this.hideDesc = true
-    }
-  }
+
+  changeClass(item) {
+      if(item.isShow === false){
+        item.isShow = true
+      }else {
+        item.isShow = false
+      }
+
+}
   constructor(protected helper: RouterHelpService) {
     super(helper);
   }

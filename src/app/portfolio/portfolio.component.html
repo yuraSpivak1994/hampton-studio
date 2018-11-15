@@ -1,19 +1,23 @@
 <div class="container" [ngClass]="{'fade-in': isFadeIn, 'fade-out': isFadeOut}">
   <div class="year-portfolio">
-    <p class="year">2014</p>
+    <p class="year"  *ngFor="let item of portfolio">{{ item.year }}</p>
   </div>
   <div class="content">
     <div class="item-row" *ngFor="let item of portfolio">
       <div class="image-block">
-        <video width="100%"
-               src="https://archive.org/download/Popeye_forPresident/Popeye_forPresident_512kb.mp4" controls></video>
+        <iframe width="100%" height="auto" 
+        src="https://www.youtube.com/embed/IiXqXTR2Cm0" 
+        frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+         allowfullscreen></iframe>
       </div>
       <div class="row-box">
         <div class="items-box" >
           <h2 class="title-portfolio">{{ item.title }}</h2>
           <div class="desc-portfolio" [ngClass]="{'description-open': item.isShow}">{{ item.description }}</div>
         </div>
-        <span class="read-more" (click)="changeClass(item)">read more...</span>
+        <span class="read-more" *ngIf="!item.isShow"(click)="changeClass(item)">read more...</span>
+        <span class="read-less" *ngIf="item.isShow" (click)="changeClass(item)">read less...</span>
       </div>
     </div>
   </div>

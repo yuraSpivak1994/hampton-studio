@@ -79,11 +79,14 @@
             max-height: 300px;
           }
         }
-          .read-more {
+          .read-more,
+            .read-less{
             margin-right: auto;
             cursor: pointer;
             font-family: sans-serif;
             color: #cec19f;
+            display: block;
+            text-align: right;
           }
       }
     }

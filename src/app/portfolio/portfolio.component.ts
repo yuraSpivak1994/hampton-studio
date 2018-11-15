@@ -25,6 +25,7 @@ export class PortfolioComponent  extends FadeAnimation {
 
   portfolio: any = [
     {
+      year: 2013,
       title: 'lorem gj gjyg ygjyegjyqgew ew q gewqg jwhgd wg qwygdjygwd  ywgyqwg ywqge ',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur consequuntur cum cupiditate deserunt, exercitationem explicabo hic incidunt,' +
         ' inventore neque nulla pariatur provident ' +
@@ -39,11 +40,12 @@ export class PortfolioComponent  extends FadeAnimation {
       isShow: false
     }];
 
+
   changeClass(item) {
       if(item.isShow === false){
-        item.isShow = true
+        item.isShow = true;
       }else {
-        item.isShow = false
+        item.isShow = false;
       }
 
 }

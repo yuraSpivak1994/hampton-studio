@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="logo-box">
+    <div class="image-logo">
+      <div class="red-block" (click)="showPolicy()">
+        <div class="policy-img"></div>
+      </div>
+      <img src="/src/assets/header/logo.png" alt="logo">
+    </div>
+    <div class="green-block">
+      <div class="social-icons">
+        <span><a href=""><div class="logo-icons pinterest-icon"></div></a></span>
+        <span><a href=""><div class="logo-icons close-icon"></div></a></span>
+        <span><a href=""><div class="logo-icons vimeo-icon"></div></a></span>
+        <span><a href=""><div class="logo-icons tweeter-icon"></div></a></span>
+        <span><a href=""><div class="logo-icons facebook-icon"></div></a></span>
+        <span><a href=""><div class="logo-icons inst-icon"></div></a></span>
+        <span><a href=""><div class="logo-icons in-icon"></div></a></span>
+      </div>
+    </div>
+    <div class="pinkRowStart">
+      <nav class="nav-desktop">
+        <ul>
+          <li><span>
+            <a
+              routerLinkActive="active"
+              (click)="navigate('/bio')">bio</a></span>
+          </li>
+          <li><span><a
+            routerLinkActive="active"
+            (click)="navigate('/text')">text</a></span></li>
+          <li><span>
+            <a
+              routerLinkActive="active"
+              (click)="showSlider()"
+            >works</a></span>
+          </li>
+          <li *ngIf="false"><span>
+            <a
+              [routerLinkActiveOptions]="{exact: true}"
+              routerLinkActive="active"
+              routerLink="/"></a></span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <router-outlet *ngIf="isShowPages"></router-outlet>
+  <div class="privacy-box" [ngClass]="{'open-policy': isPolicyShow, 'close-policy': isPolicyHide}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate debitis enim vitae. Ab asperiores
+    consectetur consequuntur illum, incidunt maxime ut? Aliquid ducimus eligendi est quos sequi sit tempore velit.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut dolore nesciunt quae sunt veniam
+    voluptatem? Accusamus adipisci aperiam, cupiditate eius iste modi nostrum officia omnis quis quod suscipit.
+  </div>
+</div>
+<p-sidebar [(visible)]="isSliderShowing" position="bottom" styleClass="ui-sidebar-bottom popup-slider">
+  <div class="slider-container">
+    <div class="empty-block"></div>
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <div class="content-box" (click)="navigate('/portfolio')">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{slide.img}}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{ slide.img }}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{ slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="content-box">
+          <div class="item-box">
+            <div class="image-box">
+              <img src="{{ slide.img }}" alt="image" class="img-slider">
+            </div>
+            <div class="desc-box">
+              <p>{{ slide.title}}</p>
+              <p>{{slide.year}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ngx-slick>
+  </div>
+</p-sidebar>

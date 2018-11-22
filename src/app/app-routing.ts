@@ -5,6 +5,7 @@ import {TextComponent} from './text/text.component';
 import {BioComponent} from './bio/bio.component';
 import {WorkComponent} from './work/work.component';
 import {PortfolioComponent} from "./portfolio/portfolio.component";
+import {HeaderComponent} from './header/header.component';
 
 
 const appRoutes: Routes = [
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
   {path: 'text', component: TextComponent},
   {path: 'home', component: EmptyComponent},
   {path: 'portfolio', component: PortfolioComponent},
+  {path: 'header', component: HeaderComponent},
   {redirectTo: 'home', pathMatch: 'full', path: ''}
 
 ];

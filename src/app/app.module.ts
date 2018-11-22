@@ -14,6 +14,8 @@ import {SidebarModule} from 'primeng/sidebar';
 import { RouterHelpService } from './other/router-help.service';
 import { SlickModule } from 'ngx-slick';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { HeaderComponent } from './header/header.component';
+import {SafePipe} from './pipes/pipe';
 
 
 
@@ -25,7 +27,9 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     TextComponent,
     EmptyComponent,
     PrivacyPolicyComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    HeaderComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,

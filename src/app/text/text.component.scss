@@ -66,6 +66,9 @@
     padding: 200px 407px 0 0;
     @media screen and(max-width: 800px) {
       padding: 153px 251px 0 0;
+      @media screen and(max-width: 700px) {
+        padding: 127px 86px 0 0;
+      }
     }
   }
 }

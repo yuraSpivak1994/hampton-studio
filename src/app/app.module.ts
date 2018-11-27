@@ -16,6 +16,7 @@ import { SlickModule } from 'ngx-slick';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HeaderComponent } from './header/header.component';
 import {SafePipe} from './pipes/pipe';
+import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 
 
 
@@ -36,7 +37,8 @@ import {SafePipe} from './pipes/pipe';
     AppRouting,
     BrowserAnimationsModule,
     SidebarModule,
-    SlickModule
+    SlickModule,
+    JwSocialButtonsModule 
   ],
   providers: [RouterHelpService],
   bootstrap: [AppComponent]

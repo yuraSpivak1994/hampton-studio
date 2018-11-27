@@ -22,6 +22,7 @@
     "@angular/router": "^6.1.0",
     "angular-image-slider": "0.0.8",
     "core-js": "^2.5.4",
+    "jw-angular-social-buttons": "^1.0.0",
     "ngx-slick": "^0.2.1",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.0-beta.1",

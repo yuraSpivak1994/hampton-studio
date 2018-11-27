@@ -171,7 +171,7 @@
       top: 35px;
       left: 170px;
       position: absolute;
-      width: 55px;
+      width: 30px;
       overflow: hidden;
       display: flex;
       flex-direction: row;
@@ -180,13 +180,13 @@
         left: 20px;
       }
 
-      img {
-        margin-left: 20px;
+      .social-icons {
+        margin-left: 10px;
         cursor: pointer;
       }
     }
     .share-box:hover {
-      width: 180px;
+      width: 280px;
     }
     .box-items {
 

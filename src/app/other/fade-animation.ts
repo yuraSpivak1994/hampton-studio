@@ -9,8 +9,8 @@ export abstract class FadeAnimation implements OnInit, OnDestroy {
   protected constructor(protected helper: RouterHelpService) {}
 
   public ngOnInit(): void {
+    this.onInit();
     this.fadeIn();
-
     this.subscription = this.helper.$pageLeaveStream.subscribe(() => {
       this.fadeOut();
     });
@@ -19,6 +19,8 @@ export abstract class FadeAnimation implements OnInit, OnDestroy {
   public ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  onInit(){}
 
   public fadeOut(): void {
     this.isFadeIn = false;

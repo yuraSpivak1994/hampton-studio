@@ -17,6 +17,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HeaderComponent } from './header/header.component';
 import {SafePipe} from './pipes/pipe';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+import {UserService} from './service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -30,7 +32,7 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
     PrivacyPolicyComponent,
     PortfolioComponent,
     HeaderComponent,
-    SafePipe
+    SafePipe,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +40,10 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
     BrowserAnimationsModule,
     SidebarModule,
     SlickModule,
-    JwSocialButtonsModule 
+    JwSocialButtonsModule,
+    HttpClientModule
   ],
-  providers: [RouterHelpService],
+  providers: [RouterHelpService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

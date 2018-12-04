@@ -1,15 +1,6 @@
 <div class="container" [ngClass]="{'fade-in': isFadeIn, 'fade-out': isFadeOut}">
-  <div class="top-img"></div>
-  <div class="desc-row">
-    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae natus tenetur voluptas! Aut iste mollitia natus nemo repellendus repudiandae similique?
-      Dolorem dolores eveniet obcaecati provident, quod reiciendis temporibus! Quae, velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis distinctio ex maiores minima officia perferendis porro quos,
-      rem totam? Accusantiu mlorem dolorem, maxime minus obcaecati odio quaerat qui sapiente sit totam.</p>
-    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet aut cum cupiditate eos exercitationem explicabo
-      facilis id illo ipsa, laboriosam minus modi mollitia neque pariatur porro quae saepe voluptas!
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cum hic incidunt necessitatibus nemo nulla quis? Aliquid at blanditiis
-      cum deleniti doloremque error eum facere incidunt, natus nesciunt optio, repudiandae.</p>
-    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aut dignissimos distinctio dolore enim illo,
-      iste magni quam qui quod quos reprehenderit sunt tempore unde. Commodi dicta modi nihil.</p>
+  <div class="top-img" [ngStyle]="{'background-image': 'url(' + textPageContent.topMediaBlock + ')'}"></div>
+  <div class="desc-row" [innerHtml]="textPageContent.description">
   </div>
-  <div class="bottom-img"></div>
+  <div class="bottom-img" [ngStyle]="{'background-image': 'url(' + textPageContent.bottomMediaBlock + ')'}"></div>
 </div>

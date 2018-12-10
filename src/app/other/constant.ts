@@ -14,3 +14,16 @@ export class Config {
     return `http://hampton-studio-api.azurewebsites.net/api/`;
   }
 }
+export class PortfolioPageContent {
+  portfolioCount: number;
+  portfolios: Array<Portfolio>;
+}
+class Portfolio {
+  media: string;
+  description: string;
+  title: string;
+  date: any;
+  isShow: string;
+  id?: any;
+}
+

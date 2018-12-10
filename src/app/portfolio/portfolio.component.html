@@ -1,24 +1,29 @@
 <div class="container" [ngClass]="{'fade-in': isFadeIn, 'fade-out': isFadeOut}">
   <div class="year-portfolio">
-    <p class="year"  *ngFor="let item of portfolio">{{ item.year }}</p>
+    <p class="year" *ngFor="let item of portfolioContent.portfolios">{{ item.date | date: 'yyy'}}</p>
   </div>
   <div class="content">
-    <div class="item-row" *ngFor="let item of portfolio; let i = index">
+    <div class="item-row" *ngFor="let item of portfolioContent.portfolios; let i = index">
       <div class="image-block">
-        <iframe width="100%" height="auto" [src]="item.video | safe" frameborder="0"
+        <iframe *ngIf="toggleImageToVideo(item.media)" width="100%" height="auto" [src]="item.media | safe"
+                frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-         allowfullscreen></iframe>
+                allowfullscreen></iframe>
+        <img *ngIf="!toggleImageToVideo(item.media)" src="{{item.media}}" alt="">
       </div>
       <div class="row-box">
-        <div class="items-box" >
-          <h2 class="title-portfolio" (click)="openPopup(i)">{{ item.title }}</h2>
-          <div class="desc-portfolio" [ngClass]="{'description-open': item.isShow}">{{ item.description }}</div>
+        <div class="items-box">
+          <p class="title-portfolio" (click)="openPopup(i)" [innerHtml]="item.title"></p>
+          <div class="desc-portfolio" [ngClass]="{'description-open': item.isShow}"
+               [innerHtml]="item.description">
+          </div>
         </div>
-        <span class="read-more" *ngIf="!item.isShow"(click)="changeClass(item)">read more...</span>
+        <span class="read-more" *ngIf="!item.isShow" (click)="changeClass(item)">read more...</span>
         <span class="read-less" *ngIf="item.isShow" (click)="changeClass(item)">read less...</span>
       </div>
     </div>
   </div>
+  <!--popup portfolio-->
   <div class="popup-portfolio" [ngClass]="{'close-popup': isPopupShowing}">
     <div class="expand-icon" (click)="togleImage()">
       <img src="../../assets/portfolio/expand-arrows.png" alt="expand">
@@ -29,17 +34,17 @@
       <tweet class="social-icons"></tweet>
       <linkedin-share class="social-icons"></linkedin-share>
     </div>
-      <img src="../../assets/portfolio/cancel.png" alt="cancel" class="cancel" (click)="cancelPopup()">
-    <div class="box-items">
-      <div class="slider-container" [ngClass]="{'expand-image-box': imageIsShowing}">
-        <div class="image"  [ngStyle]="{'background-image': 'url(' + portfolio[index].image + ')'}"
-             [ngClass]="{'expand-image': imageIsShowing}"></div>
-      </div>
-      <div class="desc-box" [ngClass]="{'hide-desc-box': imageIsShowing}">
-        <h1 class="title">{{portfolio[index].title}}</h1>
-        <p class="description">{{portfolio[index].description}}</p>
-        <p class="year">{{portfolio[index].year}}</p>
-      </div>
-    </div>
+    <img src="../../assets/portfolio/cancel.png" alt="cancel" class="cancel" (click)="cancelPopup()">
+    <!--<div class="box-items">-->
+      <!--<div class="slider-container" [ngClass]="{'expand-image-box': imageIsShowing}">-->
+        <!--<div class="image" [ngStyle]="{'background-image': 'url(' + portfolioContent.portfolios[index].image + ')'}"-->
+             <!--[ngClass]="{'expand-image': imageIsShowing}"></div>-->
+      <!--</div>-->
+      <!--<div class="desc-box" [ngClass]="{'hide-desc-box': imageIsShowing}">-->
+        <!--<h1 class="title">{{portfolioContent.portfolios[index].title}}</h1>-->
+        <!--<p class="description">{{portfolioContent.portfolios[index].description}}</p>-->
+        <!--<p class="year">{{portfolioContent.portfolios[index].year}}</p>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </div>

@@ -14,4 +14,7 @@ export class UserService {
   getTextContent () {
     return this.http.get(`${this.apiUrl}text`);
   }
+  getPortfolioContent(pageActual) {
+    return this.http.get(`${this.apiUrl}portfolio/all/?skip=0&limit=${pageActual}`);
+  }
 }

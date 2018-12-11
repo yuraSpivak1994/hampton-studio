@@ -8,5 +8,11 @@ if (environment.production) {
   enableProdMode();
 }
 
+declare global {
+  interface Array<T> {
+    splitToChunks(chunkSize: number): Array<T>;
+  }
+}
+
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));

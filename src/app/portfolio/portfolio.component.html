@@ -35,16 +35,21 @@
       <linkedin-share class="social-icons"></linkedin-share>
     </div>
     <img src="../../assets/portfolio/cancel.png" alt="cancel" class="cancel" (click)="cancelPopup()">
-    <!--<div class="box-items">-->
-      <!--<div class="slider-container" [ngClass]="{'expand-image-box': imageIsShowing}">-->
-        <!--<div class="image" [ngStyle]="{'background-image': 'url(' + portfolioContent.portfolios[index].image + ')'}"-->
-             <!--[ngClass]="{'expand-image': imageIsShowing}"></div>-->
-      <!--</div>-->
-      <!--<div class="desc-box" [ngClass]="{'hide-desc-box': imageIsShowing}">-->
-        <!--<h1 class="title">{{portfolioContent.portfolios[index].title}}</h1>-->
-        <!--<p class="description">{{portfolioContent.portfolios[index].description}}</p>-->
-        <!--<p class="year">{{portfolioContent.portfolios[index].year}}</p>-->
-      <!--</div>-->
-    <!--</div>-->
+    <div class="box-items">
+      <div class="slider-container" [ngClass]="{'expand-image-box': imageIsShowing}">
+        <div class="image" [ngStyle]="{'background-image': 'url(' + portfolioContent.portfolios[index].media + ')'}"
+             [ngClass]="{'expand-image': imageIsShowing}">
+          <iframe *ngIf="toggleImageToVideo( portfolioContent.portfolios[index].media)" width="100%" height="400px" [src]=" portfolioContent.portfolios[index].media | safe"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="desc-box" [ngClass]="{'hide-desc-box': imageIsShowing}">
+        <h1 class="title" [innerHtml]="portfolioContent.portfolios[index].title"></h1>
+        <p class="description" [innerHtml]="portfolioContent.portfolios[index].description"></p>
+        <p class="year" [innerHtml]="portfolioContent.portfolios[index].year"></p>
+      </div>
+    </div>
   </div>
 </div>

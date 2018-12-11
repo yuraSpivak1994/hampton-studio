@@ -16,7 +16,7 @@ export class PortfolioComponent extends FadeAnimation {
   public index: any = 0;
   public pageActual = 300;
 
-  public portfolioContent = new PortfolioPageContent()
+  public portfolioContent = new PortfolioPageContent();
 
 
   constructor(protected helper: RouterHelpService, private userService: UserService) {
@@ -35,20 +35,21 @@ export class PortfolioComponent extends FadeAnimation {
     this.index = index;
     this.isPopupShowing = !this.isPopupShowing;
   }
+
   cancelPopup() {
     this.isPopupShowing = !this.isPopupShowing;
   }
 
 
-
-
   public toggleImageToVideo(item) {
-    const imageToVideo = new RegExp('(hamptonstudioblob.blob.core.windows.net\/images\/)')
+    const imageToVideo = new RegExp('(hamptonstudioblob.blob.core.windows.net\/images\/)');
     const response = imageToVideo.test(item);
-    console.log(item, response);
-    return !response;
+    if (imageToVideo) {
+      return !response;
+    } else {
+      return;
+    }
   }
-
 
 
   private getPortfolio(): void {
@@ -59,6 +60,7 @@ export class PortfolioComponent extends FadeAnimation {
         console.log(err);
       });
   }
+
   onInit() {
     this.getPortfolio();
   }

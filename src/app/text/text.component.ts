@@ -24,6 +24,16 @@ export class TextComponent extends FadeAnimation {
         this.textPageContent =  data;
       });
   }
+
+  public toggleImageToVideo(item) {
+    const imageToVideo = new RegExp('(hamptonstudioblob.blob.core.windows.net\/images\/)');
+    const response = imageToVideo.test(item);
+    if (imageToVideo) {
+      return !response;
+    } else {
+      return;
+    }
+  }
   onInit() {
     this.getText();
   }

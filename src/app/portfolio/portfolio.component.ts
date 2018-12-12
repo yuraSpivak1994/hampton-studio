@@ -56,6 +56,9 @@ export class PortfolioComponent extends FadeAnimation {
     this.userService.getPortfolioContent(this.pageActual)
       .subscribe((data: any) => {
         this.portfolioContent.portfolios = data.portfolios;
+        // this.portfolioContent.portfolios = this.portfolioContent.portfolios.sort((prev: any, next: any) => {
+        //   return new Date(prev.date) - new Date(next.date);
+        // });
       }, err => {
         console.log(err);
       });

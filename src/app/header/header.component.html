@@ -47,10 +47,7 @@
 
   <router-outlet *ngIf="isShowPages"></router-outlet>
   <div class="privacy-box" [ngClass]="{'open-policy': isPolicyShow, 'close-policy': isPolicyHide}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate debitis enim vitae. Ab asperiores
-    consectetur consequuntur illum, incidunt maxime ut? Aliquid ducimus eligendi est quos sequi sit tempore velit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut dolore nesciunt quae sunt veniam
-    voluptatem? Accusamus adipisci aperiam, cupiditate eius iste modi nostrum officia omnis quis quod suscipit.
+    <app-privacy-policy></app-privacy-policy>
   </div>
 </div>
 <p-sidebar [(visible)]="isSliderShowing" position="bottom" styleClass="ui-sidebar-bottom popup-slider">

@@ -17,4 +17,8 @@ export class UserService {
   getPortfolioContent(pageActual) {
     return this.http.get(`${this.apiUrl}portfolio/all/?skip=0&limit=${pageActual}`);
   }
+  getPolicyContent () {
+    return this.http.get(`${this.apiUrl}policy`);
+  }
+
 }

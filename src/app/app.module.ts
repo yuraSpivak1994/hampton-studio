@@ -19,6 +19,7 @@ import {SafePipe} from './pipes/pipe';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import {UserService} from './service';
 import {HttpClientModule} from '@angular/common/http';
+import {Ng2OrderModule} from 'ng2-order-pipe';
 
 
 
@@ -41,7 +42,9 @@ import {HttpClientModule} from '@angular/common/http';
     SidebarModule,
     SlickModule,
     JwSocialButtonsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2OrderModule
+
   ],
   providers: [RouterHelpService, UserService],
   bootstrap: [AppComponent]

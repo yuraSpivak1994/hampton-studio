@@ -1,6 +1,6 @@
 <div class="container" [ngClass]="{'fade-in': isFadeIn, 'fade-out': isFadeOut}">
   <div class="year-portfolio">
-    <p class="year" *ngFor="let item of portfolioContent.portfolios">{{ item.date | date: 'yyy'}}</p>
+    <p class="year" *ngFor="let item of portfolioContent.portfolios | orderBy: portfolioContent.portfolios">{{ item.date | date: 'yyy'}}</p>
   </div>
   <div class="content">
     <div class="item-row" *ngFor="let item of portfolioContent.portfolios; let i = index">

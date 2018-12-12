@@ -27,30 +27,14 @@
 
     }
 
-    .description {
-      font-family: sans-serif;
-      font-size: 16px;
-      line-height: 1.2;
-      text-align: justify;
-      color: rgba(255, 255, 255, 0.8);
-      padding: 15px 30px;
-    }
   }
   .opacity-row {
     width: 100%;
     display: flex;
 
     .empty-left-box {
-      width: 153px;
+      width: 146px;
       border-right: 2px solid #e7e5e4;
-    }
-    .description-black {
-      font-family: sans-serif;
-      font-size: 16px;
-      line-height: 1.2;
-      text-align: justify;
-      color: rgba(51, 51, 51, 0.8);
-      padding: 10px 30px;
     }
   }
 
@@ -81,3 +65,4 @@
     }
   }
 }
+

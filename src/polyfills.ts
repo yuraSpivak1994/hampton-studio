@@ -78,3 +78,23 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+/**
+ * Manual Added polyfills
+ */
+
+/**
+ * Split array to chunks
+ * Ex: [1,2,3,4,5,6,7].splitToChunks(3)
+ * Result: [[1,2,3],[4,5,6],[7]]
+ */
+Object.defineProperty(Array.prototype, 'splitToChunks', {
+  value: function(chunkSize) {
+    const array = this;
+    return [].concat.apply([],
+      array.map(function(elem, i) {
+        return i % chunkSize ? [] : [array.slice(i, i + chunkSize)];
+      })
+    );
+  }
+});

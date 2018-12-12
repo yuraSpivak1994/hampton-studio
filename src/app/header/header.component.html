@@ -47,47 +47,26 @@
 
   <router-outlet *ngIf="isShowPages"></router-outlet>
   <div class="privacy-box" [ngClass]="{'open-policy': isPolicyShow, 'close-policy': isPolicyHide}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cupiditate debitis enim vitae. Ab asperiores
-    consectetur consequuntur illum, incidunt maxime ut? Aliquid ducimus eligendi est quos sequi sit tempore velit.
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet aut dolore nesciunt quae sunt veniam
-    voluptatem? Accusamus adipisci aperiam, cupiditate eius iste modi nostrum officia omnis quis quod suscipit.
+    <app-privacy-policy></app-privacy-policy>
   </div>
 </div>
 <p-sidebar [(visible)]="isSliderShowing" position="bottom" styleClass="ui-sidebar-bottom popup-slider">
   <div class="slider-container">
     <div class="empty-block"></div>
     <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
-      <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-        <div class="content-box" (click)="navigate('/portfolio')">
+      <div ngxSlickItem *ngFor="let slide of portfolio" class="slide">
+        <div class="content-box" (click)="navigate('/portfolio')" *ngFor="let item of slide">
           <div class="item-box">
             <div class="image-box">
-              <img src="{{slide.img}}" alt="image" class="img-slider">
+              <img src="{{item.media}}" alt="" class="img-slider">
+              <iframe *ngIf="toggleImageToVideo(item.media)" class="you-tube" [src]="item.media | safe"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
             </div>
             <div class="desc-box">
-              <p>{{slide.title}}</p>
-              <p>{{slide.year}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="content-box">
-          <div class="item-box">
-            <div class="image-box">
-              <img src="{{ slide.img }}" alt="image" class="img-slider">
-            </div>
-            <div class="desc-box">
-              <p>{{ slide.title}}</p>
-              <p>{{slide.year}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="content-box">
-          <div class="item-box">
-            <div class="image-box">
-              <img src="{{ slide.img }}" alt="image" class="img-slider">
-            </div>
-            <div class="desc-box">
-              <p>{{ slide.title}}</p>
-              <p>{{slide.year}}</p>
+              <p>{{item.title}}</p>
+              <p>{{item.date | date: 'yyy'}}</p>
             </div>
           </div>
         </div>

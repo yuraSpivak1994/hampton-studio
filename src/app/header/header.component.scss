@@ -369,7 +369,7 @@
     }
     .green-block {
       width: 99px;
-      height: 100vh;
+      height: 400vh;
       right: 337px;
       position: absolute;
       top: 221px;
@@ -432,18 +432,15 @@
 
       @media screen and(max-width: 1400px) {
         width: 88px;
-        height: 100vw;
         right: 272px;
         top: 199px;
       }
       @media screen and(max-width: 800px) {
         width: 62px;
-        height: 100vw;
         right: 156px;
         top: 151px;
         @media screen and(max-width: 700px) {
           width: 49px;
-          height: 100vh;
           right: 12px;
           top: 127px;
         }
@@ -492,7 +489,7 @@
 }
 ::ng-deep {
   .ui-sidebar-bottom {
-    max-width: 1400px;
+    max-width: 1428px;
     height: 300px;
     background: #958c99ad;
     transform: translateY(170%);
@@ -575,7 +572,13 @@
       @media screen and(max-width: 1000px) {
         width: 80%;
         @media screen and(max-width: 700px) {
-          width: 75%;
+          width: 85%;
+          @media screen and(max-width: 540px) {
+            width: 80%;
+            @media screen and(max-width: 400px) {
+              width: 76%;
+            }
+          }
         }
       }
     }
@@ -607,3 +610,8 @@
     }
   }
 }
+.you-tube {
+  width: 100%;
+  max-height: 80px;
+}
+

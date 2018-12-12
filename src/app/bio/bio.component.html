@@ -1,40 +1,12 @@
 <div class="container" [ngClass]="{'fade-in': isFadeIn, 'fade-out': isFadeOut}">
   <div class="pink-row">
     <div class="empty-left-box"></div>
-    <div class="desc-box">
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi aspernatur, cum eius et
-        eum,
-        explicabo hic iste iusto nobis non nulla odio officia quasi quia quibusdam repudiandae, saepe voluptatum?</p>
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque distinctio dolor
-        eaque fuga, fugiat ipsa
-        maxime minus, modi nesciunt nostrum placeat quae, quo sapiente sequi sint sunt suscipit voluptates.</p>
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, architecto earum
-        esse et fuga modi necessitatibus
-        nihil non, optio quisquam sequi sit, voluptatum! Dolores earum minus molestiae natus obcaecati veritatis.</p>
-      <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto culpa dolores
-        eligendi, error esse eveniet facilis
-        harum laudantium, molestiae nemo praesentium quam quasi qui quidem sed sequi tempora voluptates voluptatum!</p>
+    <div class="desc-box-pink" [innerHtml]="contentBio.pinkBlockText">
     </div>
   </div>
   <div class="opacity-row">
     <div class="empty-left-box"></div>
-    <div class="desc-box">
-      <p class="description-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi aspernatur, cum eius et
-        eum,
-        explicabo hic iste iusto nobis non nulla odio officia quasi quia quibusdam repudiandae, saepe voluptatum?</p>
-      <p class="description-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque distinctio dolor
-        eaque fuga, fugiat ipsa
-        maxime minus, modi nesciunt nostrum placeat quae, quo sapiente sequi sint sunt suscipit voluptates.</p>
-      <p class="description-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, architecto earum
-        esse et fuga modi necessitatibus
-        nihil non, optio quisquam sequi sit, voluptatum! Dolores earum minus molestiae natus obcaecati veritatis.</p>
-      <p class="description-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto culpa dolores
-        eligendi, error esse eveniet facilis
-        harum laudantium, molestiae nemo praesentium quam quasi qui quidem sed sequi tempora voluptates voluptatum!</p>
-      <p class="description-black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur commodi,
-        consequuntur esse est harum ipsum nobis numquam sequi.
-        Asperiores blanditiis dignissimos illum mollitia optio praesentium qui repudiandae ullam voluptates!</p>
-
+    <div class="desc-box-white" [innerHtml]="contentBio.whiteBlockText">
     </div>
   </div>
 </div>

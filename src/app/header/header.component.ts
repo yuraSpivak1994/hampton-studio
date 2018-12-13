@@ -28,10 +28,6 @@ export class HeaderComponent extends RouterDelay implements OnInit {
     this.isSliderShowing = true;
   }
 
-  public hideSlider(): void {
-    this.isSliderShowing = false;
-  }
-
   public showPolicy(): void {
     if (this.isPolicyShow === false && this.isPolicyHide === true) {
       this.isPolicyShow = true;
@@ -62,26 +58,10 @@ export class HeaderComponent extends RouterDelay implements OnInit {
     }
   }
 
-  // public sortPortfolioSlider(data) {
-  //   const portfolio = data;
-  //   let category: any;
-  //   for (const key in portfolio.portfolios) {
-  //     // category = portfolio.portfolios[key].splice(0, 3);
-  //   }
-  //   console.log(JSON.stringify(data.portfolios))
-  // }
   public sortPortfolioSlider({ portfolios }: PortfolioPageContent) {
 
-    // const sorted = [];
-    //     // const maxNestedItems = 3;
-    //     // const nestedArraysCount = Math.ceil(portfolios.length / maxNestedItems);
-    //     //
-    //     // for (let i = 0; i < nestedArraysCount; i++) {
-    //     //   sorted.push([portfolios.splice(0, maxNestedItems)]);
-    //     // }
     const sorted = portfolios.splitToChunks(3);
-    this.portfolio = sorted
-    console.log(this.portfolio)
+    this.portfolio = sorted;
     return sorted;
   }
 

@@ -551,6 +551,8 @@
         .image-box {
           width: 100px;
           padding: 5px;
+          height: 50px;
+          overflow: hidden;
 
           .img-slider {
             width: 100%;

@@ -13,7 +13,7 @@
       </div>
       <div class="row-box">
         <div class="items-box">
-          <p class="title-portfolio" (click)="openPopup(i)" [innerHtml]="item.title"></p>
+          <p class="title-portfolio" (click)="openPopup(i, item)" [innerHtml]="item.title"></p>
           <div class="desc-portfolio" [ngClass]="{'description-open': item.isShow}"
                [innerHtml]="item.description">
           </div>
@@ -24,7 +24,7 @@
     </div>
   </div>
   <!--popup portfolio-->
-  <div class="popup-portfolio" [ngClass]="{'close-popup': isPopupShowing}">
+  <div class="popup-portfolio"  *ngIf="isPopupShowing">
     <div class="expand-icon" (click)="togleImage()">
       <img src="../../assets/portfolio/expand-arrows.png" alt="expand">
     </div>
@@ -37,18 +37,19 @@
     <img src="../../assets/portfolio/cancel.png" alt="cancel" class="cancel" (click)="cancelPopup()">
     <div class="box-items">
       <div class="slider-container" [ngClass]="{'expand-image-box': imageIsShowing}">
-        <div class="image" [ngStyle]="{'background-image': 'url(' + portfolioContent.portfolios[index].media + ')'}"
+        <div class="image" [ngStyle]="{'background-image': 'url(' + previewPortfolio?.media + ')'}"
              [ngClass]="{'expand-image': imageIsShowing}">
-          <iframe *ngIf="toggleImageToVideo( portfolioContent.portfolios[index].media)" width="100%" height="400px" [src]=" portfolioContent.portfolios[index].media | safe"
+          <iframe *ngIf="toggleImageToVideo( previewPortfolio?.media)" width="100%" height="400px" [src]="previewPortfolio?.media | safe"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
         </div>
       </div>
+      <!-- покажи -->
       <div class="desc-box" [ngClass]="{'hide-desc-box': imageIsShowing}">
-        <h1 class="title" [innerHtml]="portfolioContent.portfolios[index].title"></h1>
-        <p class="description" [innerHtml]="portfolioContent.portfolios[index].description"></p>
-        <p class="year" [innerHtml]="portfolioContent.portfolios[index].year"></p>
+        <h1 class="title" [innerHtml]="previewPortfolio?.title"></h1>
+        <p class="description" [innerHtml]="previewPortfolio?.description"></p>
+        <p class="year" [innerHtml]="previewPortfolio?.year"></p>
       </div>
     </div>
   </div>

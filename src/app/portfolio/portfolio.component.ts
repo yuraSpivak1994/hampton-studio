@@ -12,9 +12,10 @@ import {PortfolioPageContent} from '../other/constant';
 export class PortfolioComponent extends FadeAnimation {
 
   public imageIsShowing = false;
-  public isPopupShowing = true;
+  public isPopupShowing = false;
   public index: any = 0;
   public pageActual = 300;
+  public previewPortfolio = null;
 
   public portfolioContent = new PortfolioPageContent();
 
@@ -31,13 +32,15 @@ export class PortfolioComponent extends FadeAnimation {
     this.imageIsShowing = !this.imageIsShowing;
   }
 
-  openPopup(index) {
+  openPopup(index, portfolio) {
     this.index = index;
-    this.isPopupShowing = !this.isPopupShowing;
+    this.previewPortfolio = portfolio;
+    this.isPopupShowing = true;
   }
 
   cancelPopup() {
-    this.isPopupShowing = !this.isPopupShowing;
+    this.previewPortfolio = null;
+    this.isPopupShowing = false;
   }
 
 
@@ -51,14 +54,13 @@ export class PortfolioComponent extends FadeAnimation {
     }
   }
 
-
   private getPortfolio(): void {
     this.userService.getPortfolioContent(this.pageActual)
       .subscribe((data: any) => {
         this.portfolioContent.portfolios = data.portfolios;
-        // this.portfolioContent.portfolios = this.portfolioContent.portfolios.sort((prev: any, next: any) => {
-        //   return new Date(prev.date) - new Date(next.date);
-        // });
+        this.portfolioContent.portfolios = this.portfolioContent.portfolios.sort((prev: any, next: any) => {
+          return +new Date(prev.date) - +new Date(next.date);
+        });
       }, err => {
         console.log(err);
       });

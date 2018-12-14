@@ -5,15 +5,16 @@
   <div class="content">
     <div class="item-row" *ngFor="let item of portfolioContent.portfolios; let i = index">
       <div class="image-block">
-        <iframe *ngIf="toggleImageToVideo(item.media)" width="100%" height="auto" [src]="item.media | safe"
+        <iframe *ngIf="toggleImageToVideo(item.media)" width="100%"  height="333" [src]="item.media | safe"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+                allowfullscreen
+        class="video"></iframe>
         <img *ngIf="!toggleImageToVideo(item.media)" src="{{item.media}}" alt="">
       </div>
       <div class="row-box">
-        <div class="items-box">
-          <p class="title-portfolio" (click)="openPopup(i, item)" [innerHtml]="item.title"></p>
+        <div class="items-box" (click)="openPopup(i, item)">
+          <p class="title-portfolio" [innerHtml]="item.title"></p>
           <div class="desc-portfolio" [ngClass]="{'description-open': item.isShow}"
                [innerHtml]="item.description">
           </div>
@@ -26,7 +27,7 @@
   <!--popup portfolio-->
   <div class="popup-portfolio"  *ngIf="isPopupShowing">
     <div class="expand-icon" (click)="togleImage()">
-      <img src="../../assets/portfolio/expand-arrows.png" alt="expand">
+      <img src="../../assets/portfolio/expand.png" alt="expand">
     </div>
     <div class="share-box">
       <img src="../../assets/portfolio/share.png" alt="share">
@@ -34,18 +35,17 @@
       <tweet class="social-icons"></tweet>
       <linkedin-share class="social-icons"></linkedin-share>
     </div>
-    <img src="../../assets/portfolio/cancel.png" alt="cancel" class="cancel" (click)="cancelPopup()">
+    <img src="../../assets/portfolio/cross-out.png" alt="cancel" class="cancel" (click)="cancelPopup()">
     <div class="box-items">
       <div class="slider-container" [ngClass]="{'expand-image-box': imageIsShowing}">
         <div class="image" [ngStyle]="{'background-image': 'url(' + previewPortfolio?.media + ')'}"
              [ngClass]="{'expand-image': imageIsShowing}">
-          <iframe *ngIf="toggleImageToVideo( previewPortfolio?.media)" width="100%" height="400px" [src]="previewPortfolio?.media | safe"
+          <iframe *ngIf="toggleImageToVideo( previewPortfolio?.media)" class="video-popup" [src]="previewPortfolio?.media | safe"
                   frameborder="0"
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen></iframe>
         </div>
       </div>
-      <!-- покажи -->
       <div class="desc-box" [ngClass]="{'hide-desc-box': imageIsShowing}">
         <h1 class="title" [innerHtml]="previewPortfolio?.title"></h1>
         <p class="description" [innerHtml]="previewPortfolio?.description"></p>

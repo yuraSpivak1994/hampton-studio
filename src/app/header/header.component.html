@@ -23,15 +23,16 @@
           <li><span>
             <a
               routerLinkActive="active"
-              (click)="navigate('/bio')">bio</a></span>
+              (click)="navigate('/bio')">about</a></span>
           </li>
           <li><span><a
             routerLinkActive="active"
-            (click)="navigate('/text')">text</a></span></li>
+            (click)="navigate('/text')">texts</a></span></li>
           <li><span>
             <a
               routerLinkActive="active"
               (click)="showSlider()"
+              class="text-nav"
             >works</a></span>
           </li>
           <li *ngIf="false"><span>

@@ -72,6 +72,9 @@
           @media screen and (max-width: 910px){
             min-width: 235px;
             padding: 0 14px 15px 14px;
+            @media screen and (max-width: 910px){
+              min-width: 170px;
+            }
           }
         }
 

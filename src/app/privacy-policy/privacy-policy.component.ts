@@ -22,7 +22,8 @@ export class PrivacyPolicyComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fetchPolicy();
+    setTimeout(() => {
+      this.fetchPolicy();
+    }, 5);
   }
-
 }

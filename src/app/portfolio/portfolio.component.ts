@@ -11,6 +11,10 @@ import {PortfolioPageContent} from '../other/constant';
 })
 export class PortfolioComponent extends FadeAnimation {
 
+
+  url = 'https://www.facebook.com/';
+  text = ` hampton studio`;
+  imageUrl = 'https://www.facebook.com/photo.php?fbid=769334390083293&set=a.271607863189284&type=3&theater';
   public imageIsShowing = false;
   public isPopupShowing = false;
   public index: any = 0;

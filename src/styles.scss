@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(assets/styles/reset.scss);
 
+@font-face {
+  font-family: GIL;
+  src: url(assets/styles/fonts/GIL.TTF);
+}
+
+* {
+  font-family: GIL!important;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

@@ -17,7 +17,7 @@
   }
 
   .year-portfolio {
-    width: 114px;
+    width: 100px;
     border-right: 1px solid #958c99;
     @media screen and(max-width: 700px){
       width: 61px;
@@ -57,6 +57,9 @@
           margin: 10px 15px;
           @media screen and (max-width: 700px) {
             flex-direction: column;
+            @media screen and (max-width: 400px) {
+              margin: 10px 0;
+            }
           }
         }
 
@@ -227,7 +230,12 @@
       }
     }
     .share-box:hover {
-      width: 280px;
+      width: 420px;
+      @media screen and(max-width: 500px){
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+      }
     }
     .box-items {
 

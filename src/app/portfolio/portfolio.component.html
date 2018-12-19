@@ -31,9 +31,11 @@
     </div>
     <div class="share-box">
       <img src="../../assets/portfolio/share.png" alt="share">
-      <fb-like class="social-icons"></fb-like>
+      <pin-it url={{url}} media={{imageUrl}} description={{text}} class="social-icons"></pin-it>
+      <fb-like url={{url}} class="social-icons"></fb-like>
       <tweet class="social-icons"></tweet>
       <linkedin-share class="social-icons"></linkedin-share>
+      <google-plus url={{url}} class="social-icons"></google-plus>
     </div>
     <img src="../../assets/portfolio/cross-out.png" alt="cancel" class="cancel" (click)="cancelPopup()">
     <div class="box-items">
